@@ -10,23 +10,25 @@ def Bot() :
  if (notread[0] ==0):
   time.sleep(3)
  else:
+  #get the text of message
   msg=notread[1]
   uid=msg['uid']
   msg=msg['body']
 
-
+  #Make the ruquest for DialogFlow
   request=apiai.ApiAI(config.ai_token).text_request()
   request.lang='ru'
   request.session_id='MyVKbot'
   request.query=msg
-
+  
+  #Get the response from DilogFlow
   responseJson=json.loads(request.getresponse().read().decode('utf-8'))
   response=responseJson['result']['fulfillment']['speech']
  
   if response:
     api.messages.send(user_id=uid, chat_id=uid, message=response)
   else:
-    api.messages.send(user_id=uid, chat_id=uid, message="Прости, я тебя не понял")
+    api.messages.send(user_id=uid, chat_id=uid, message="Not understend you")
 
 while (True):
  Bot();
