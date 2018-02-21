@@ -1,0 +1,3 @@
+token='36ffb0498dbfcb01a2ea98fde536de4664a32b99b14c42a7d02c50a5b0701fe42d9c6428cab9722b36cc0'
+ai_token="eb9cfb23f3084a7ab0a9d038abba19ac"
+
