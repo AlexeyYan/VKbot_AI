@@ -21,7 +21,7 @@ def Bot() :
   request.session_id='MyVKbot'
   request.query=msg
   
-  #Get the response from DilogFlow
+  #Get the response from DialogFlow
   responseJson=json.loads(request.getresponse().read().decode('utf-8'))
   response=responseJson['result']['fulfillment']['speech']
  
